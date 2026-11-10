@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main(void) {
+    int n, i, num, greatest, smallest;
+
+    printf("How many numbers? ");
+    scanf("%d", &n);
+
+    if (n <= 0) {
+        printf("Please enter a positive count.\n");
+        return 1;
+    }
+
+    printf("Enter number 1: ");
+    scanf("%d", &num);
+    greatest = smallest = num;
+
+    for (i = 2; i <= n; i++) {
+        printf("Enter number %d: ", i);
+        scanf("%d", &num);
+
+        if (num > greatest)
+            greatest = num;
+        if (num < smallest)
+            smallest = num;
+    }
+
+    printf("Greatest = %d\n", greatest);
+    printf("Smallest = %d\n", smallest);
+
+    return 0;
+}
